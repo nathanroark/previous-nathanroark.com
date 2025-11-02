@@ -1,18 +1,20 @@
 ---
-import { type CollectionEntry, getCollection } from 'astro:content'
-import Layout from '@/layouts/layout.astro'
+import { getCollection, getEntry } from 'astro:content'
+import Layout from '@/layouts/content-layout.astro'
 import { Image } from 'astro:assets'
+
+// Static paths: only return params (no props)
 export async function getStaticPaths() {
   const posts = await getCollection('books')
-  return posts.map((post: any) => ({
+  return posts.map((post) => ({
     params: { slug: post.slug },
-    props: post,
   }))
 }
 
-type Props = CollectionEntry<'books'>
-
-const post: Props = Astro.props
+// In the page: refetch the entry so we have methods like .render()
+const { slug } = Astro.params
+const post = await getEntry('books', slug!)
+if (!post) throw new Error('Not found')
 
 const { Content } = await post.render()
 ---

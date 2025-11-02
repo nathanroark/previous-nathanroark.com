@@ -4,7 +4,7 @@ import Layout from '@/layouts/content-layout.astro'
 import { Image } from 'astro:assets'
 import BackdropSection from '@/components/backdrop-section.astro'
 
-// 1) Static paths: only return params (no props)
+// Static paths: only return params (no props)
 export async function getStaticPaths() {
   const posts = await getCollection('albums')
   return posts.map((post) => ({
@@ -12,7 +12,7 @@ export async function getStaticPaths() {
   }))
 }
 
-// 2) In the page: refetch the entry so we have methods like .render()
+// In the page: refetch the entry so we have methods like .render()
 const { slug } = Astro.params
 const post = await getEntry('albums', slug!)
 if (!post) throw new Error('Not found')
