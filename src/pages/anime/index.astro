@@ -1,0 +1,40 @@
+---
+import Layout from '@/layouts/layout.astro'
+import AstroImage from '@/components/astro-image.astro'
+
+import { getCollection } from 'astro:content'
+
+const posts = (await getCollection('anime')).sort((a, b) => {
+  let aDate: Date
+  if (a.data.releaseDate) aDate = a.data.releaseDate
+  else if (a.data.startDate) aDate = a.data.startDate
+  else return 1
+  let bDate: Date
+  if (b.data.releaseDate) bDate = b.data.releaseDate
+  else if (b.data.startDate) bDate = b.data.startDate
+  else return -1
+  return aDate > bDate ? -1 : 1
+})
+---
+
+<Layout title="Favorite Anime" description="My favorite anime.">
+  <div
+    class="container mx-auto grid w-full grid-cols-2 flex-wrap gap-4 px-2 md:grid-cols-3 md:px-4 lg:grid-cols-5"
+  >
+    {
+      posts.map((post: any) => (
+        <a href={`/anime/${post.slug}`} class="flex flex-col">
+          <div class="flex h-full flex-col justify-between rounded border border-gray-700 p-4 dark:bg-gray-900">
+            <div transition:name={`book-${post.slug}`} class="m-auto">
+              <AstroImage src={post.data.art} alt={post.data.title} />
+            </div>
+            <div>
+              <p class="pt-4 font-semibold">{post.data.title}</p>
+              <p class="text-sm">{post.data.studio}</p>
+            </div>
+          </div>
+        </a>
+      ))
+    }
+  </div>
+</Layout>

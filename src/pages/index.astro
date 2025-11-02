@@ -1,0 +1,181 @@
+---
+import '@/styles/globals.css'
+import Layout from '@/layouts/layout.astro'
+import UnderlineLink from '@/components/underline-link.astro'
+import Card from '@/components/card.astro'
+import AlbumCard from '@/components/album-card.astro'
+import { getCollection } from 'astro:content'
+import ArrowRight from '@/components/icons/arrow-right.astro'
+
+const topMusicPosts = (await getCollection('albums'))
+  .sort((a, b) => (b.data.score ?? 0) - (a.data.score ?? 0))
+  .slice(0, 10)
+
+const bookPosts = (await getCollection('books'))
+  .sort((a, b) => (new Date(a.data.read) > new Date(b.data.read) ? -1 : 1))
+  .slice(0, 10)
+
+const animePosts = (await getCollection('anime'))
+  .sort((a, b) => {
+    const getDate = (x: any) => x.data.releaseDate ?? x.data.startDate
+    const ad = getDate(a),
+      bd = getDate(b)
+    if (!ad && !bd) return 0
+    if (!ad) return 1
+    if (!bd) return -1
+    return ad > bd ? -1 : 1
+  })
+  .slice(0, 10)
+
+const moviePosts = (await getCollection('movies'))
+  .sort((a, b) => (new Date(a.data.post_date) > new Date(b.data.post_date) ? -1 : 1))
+  .slice(0, 10)
+---
+
+<Layout title="Nathan's Blog" description="A blog about music, movies, anime, and books I like.">
+  <div class="mx-auto flex h-screen w-full flex-col items-start space-y-16 pb-64 pt-4">
+    <div>
+      <h1 class="py-3 text-5xl font-bold">Nathan's Blog</h1>
+      <p class="text-xl">
+        This is a blog for me to post about music, movies, anime, and books I like.
+      </p>
+    </div>
+
+    {/* Music */}
+    <div class="space-y-3">
+      <UnderlineLink
+        href="music/"
+        class="text-4xl italic"
+        gradient="sunset"
+        underlineHeightClass="h-[3px]"
+        duration={350}
+        aria-label="Music Posts"
+      >
+        Music Posts
+        <ArrowRight slot="icon" className="ml-1" size={40} />
+      </UnderlineLink>
+      <div class="grid grid-cols-2 gap-4 md:grid-cols-5">
+        {
+          topMusicPosts.map((post: any) => (
+            <AlbumCard
+              href={`/music/${post.slug}`}
+              imgSrc={post.data.cover_art_url}
+              imgAlt={post.data.album}
+              album={post.data.album}
+              artist={post.data.artist}
+              transitionName={`record-${post.slug}`}
+            />
+          ))
+        }
+      </div>
+      <!-- <div class="grid grid-cols-2 gap-4 md:grid-cols-5"> -->
+      <!--   { -->
+      <!--     topMusicPosts.map((post: any) => ( -->
+      <!--       <Card -->
+      <!--         href={`/music/${post.slug}`} -->
+      <!--         imgSrc={post.data.cover_art_url} -->
+      <!--         imgAlt={post.data.album} -->
+      <!--         title={post.data.album} -->
+      <!--         subtitle={post.data.artist} -->
+      <!--         transitionName={`record-${post.slug}`} -->
+      <!--         ariaLabel={`${post.data.album} by ${post.data.artist}`} -->
+      <!--       /> -->
+      <!--     )) -->
+      <!--   } -->
+      <!-- </div> -->
+    </div>
+
+    {/* Movies */}
+    <div class="space-y-3">
+      <UnderlineLink
+        href="movies/"
+        class="text-4xl italic"
+        gradient="sunset"
+        underlineHeightClass="h-[3px]"
+        duration={350}
+        aria-label="Movie Posts"
+      >
+        Movie Posts
+        <ArrowRight slot="icon" className="ml-1" size={40} />
+      </UnderlineLink>
+
+      <div class="grid grid-cols-2 gap-4 md:grid-cols-5">
+        {
+          moviePosts.map((post: any) => (
+            <Card
+              href={`/movies/${post.slug}`}
+              imgSrc={post.data.cover_art_url}
+              imgAlt={post.data.title}
+              title={post.data.title}
+              subtitle={post.data.director ? post.data.director : post.data.studio}
+              transitionName={`record-${post.slug}`}
+              ariaLabel={`${post.data.title} directed by ${post.data.director ? post.data.director : post.data.studio}`}
+            />
+          ))
+        }
+      </div>
+    </div>
+
+    {/* Anime */}
+    <div class="space-y-3">
+      <UnderlineLink
+        href="anime/"
+        class="text-4xl italic"
+        gradient="sunset"
+        underlineHeightClass="h-[3px]"
+        duration={350}
+        aria-label="Anime Posts"
+      >
+        Anime Posts
+        <ArrowRight slot="icon" className="ml-1" size={40} />
+      </UnderlineLink>
+
+      <div class="grid grid-cols-2 gap-4 md:grid-cols-5">
+        {
+          animePosts.map((post: any) => (
+            <Card
+              href={`/anime/${post.slug}`}
+              imgSrc={post.data.art}
+              imgAlt={post.data.title}
+              title={post.data.title}
+              subtitle={post.data.studio}
+              transitionName={`book-${post.slug}`}
+              ariaLabel={`${post.data.title} by ${post.data.studio}`}
+            />
+          ))
+        }
+      </div>
+    </div>
+
+    {/* Books */}
+    <div class="space-y-3">
+      <UnderlineLink
+        href="books/"
+        class="text-4xl italic"
+        gradient="sunset"
+        underlineHeightClass="h-[3px]"
+        duration={350}
+        aria-label="Book Posts"
+      >
+        Book Posts
+        <ArrowRight slot="icon" className="ml-1" size={40} />
+      </UnderlineLink>
+
+      <div class="grid grid-cols-2 gap-4 md:grid-cols-5">
+        {
+          bookPosts.map((post: any) => (
+            <Card
+              href={`/books/${post.slug}`}
+              imgSrc={post.data.cover_image}
+              imgAlt={post.data.title}
+              title={post.data.title}
+              subtitle={post.data.author}
+              transitionName={`book-${post.slug}`}
+              ariaLabel={`${post.data.title} by ${post.data.author}`}
+            />
+          ))
+        }
+      </div>
+    </div>
+  </div>
+</Layout>

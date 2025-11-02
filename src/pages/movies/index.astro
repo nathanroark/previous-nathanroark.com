@@ -1,0 +1,32 @@
+---
+import Layout from '@/layouts/layout.astro'
+import AstroImage from '@/components/astro-image.astro'
+
+import { getCollection } from 'astro:content'
+
+const posts = (await getCollection('movies')).sort((a, b) =>
+  new Date(a.data.release_date) > new Date(b.data.release_date) ? -1 : 1,
+)
+---
+
+<Layout title="Favorite Movies" description="My favorite movies.">
+  <div
+    class="container mx-auto grid w-full grid-cols-2 flex-wrap gap-4 px-2 md:grid-cols-3 md:px-4 lg:grid-cols-5"
+  >
+    {
+      posts.map((post: any) => (
+        <a href={`/movies/${post.slug}`} class="flex flex-col">
+          <div class="flex h-full flex-col justify-between rounded border border-gray-700 p-4 dark:bg-gray-900">
+            <div transition:name={`record-${post.slug}`} class="m-auto">
+              <AstroImage src={post.data.cover_art_url} alt={post.data.title} />
+            </div>
+            <div>
+              <p class="truncate pt-4 font-semibold">{post.data.title}</p>
+              <p class="pt-1">{post.data.director ? post.data.director : post.data.studio}</p>
+            </div>
+          </div>
+        </a>
+      ))
+    }
+  </div>
+</Layout>
