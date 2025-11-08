@@ -10,9 +10,7 @@ const posts = (await getCollection('movies')).sort((a, b) =>
 ---
 
 <Layout title="Favorite Movies" description="My favorite movies.">
-  <div
-    class="container mx-auto grid w-full grid-cols-2 flex-wrap gap-4 px-2 md:grid-cols-3 md:px-4 lg:grid-cols-5"
-  >
+  <div class="grid grid-cols-2 gap-4 md:grid-cols-3 lg:grid-cols-5">
     {
       posts.map((post: any) => (
         <Card
