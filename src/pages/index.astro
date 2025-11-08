@@ -63,7 +63,7 @@ const moviePosts = (await getCollection('movies'))
               imgAlt={post.data.album}
               album={post.data.album}
               artist={post.data.artist}
-              transitionName={`record-${post.slug}`}
+              transitionName={`transition-${post.slug}`}
             />
           ))
         }

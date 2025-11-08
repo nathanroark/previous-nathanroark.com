@@ -1,6 +1,6 @@
 ---
 import Layout from '@/layouts/layout.astro'
-import AstroImage from '@/components/astro-image.astro'
+import Card from '@/components/card.astro'
 
 import { getCollection } from 'astro:content'
 
@@ -15,17 +15,15 @@ const posts = (await getCollection('books')).sort((a, b) =>
   >
     {
       posts.map((post: any) => (
-        <a href={`/books/${post.slug}`} class="flex flex-col">
-          <div class="flex h-full flex-col justify-between rounded border border-gray-700 p-4 dark:bg-gray-900">
-            <div transition:name={`book-${post.slug}`} class="m-auto">
-              <AstroImage src={post.data.cover_image} alt={post.data.title} />
-            </div>
-            <div>
-              <p class="truncate pt-4 font-semibold">{post.data.title}</p>
-              <p class="pt-1">{post.data.author}</p>
-            </div>
-          </div>
-        </a>
+        <Card
+          href={`/books/${post.slug}`}
+          imgSrc={post.data.cover_image}
+          imgAlt={post.data.title}
+          title={post.data.title}
+          subtitle={post.data.author}
+          transitionName={`transition-${post.slug}`}
+          ariaLabel={`${post.data.title} by ${post.data.author}`}
+        />
       ))
     }
   </div>
