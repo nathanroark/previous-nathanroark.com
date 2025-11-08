@@ -5,7 +5,7 @@ release_date: '2010-10-04'
 genres: ['Post Hardcore', 'Screamo', 'Emo', 'Poetry']
 cover_art_url: '/assets/music/la-dispute-wildlife.jpeg'
 post_date: '2022-01-01'
-score: 9.5
+score: 9
 ---
 
 ## Track Listing
