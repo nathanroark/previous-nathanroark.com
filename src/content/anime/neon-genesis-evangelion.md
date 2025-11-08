@@ -5,5 +5,5 @@ endDate: 'March 27 1996'
 studio: 'Gainax'
 genre: ['Apocalyptic', 'Mecha', 'Psychological', 'Science Fiction']
 episodeCount: 26
-art: '/assets/anime/neon-genesis-evangelion.jpeg'
+art: '/assets/anime/neon-genesis-evangelion2.jpg'
 ---
