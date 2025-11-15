@@ -5,7 +5,7 @@ release_date: '2025-01-25'
 post_date: '2025-01-25'
 genres: ['Atmospheric', 'Drum and Bass', 'Space Ambient', 'Jungle', 'Trancestep']
 cover_art_url: '/assets/music/cynthoni-draining-love-story-in-the-eyes-of-cynthoni.webp'
-score: 8
+score: 8.5
 ---
 
 ## Thoughts

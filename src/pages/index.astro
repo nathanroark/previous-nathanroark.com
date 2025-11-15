@@ -10,7 +10,7 @@ import ArrowRight from '@/components/icons/arrow-right.astro'
 const musicPosts = (await getCollection('albums'))
   .sort((a, b) => (new Date(a.data.release_date) > new Date(b.data.release_date) ? -1 : 1))
   .slice(0, 10)
-// .sort((a, b) => (b.data.score ?? 0) - (a.data.score ?? 0))
+  .sort((a, b) => (b.data.score ?? 0) - (a.data.score ?? 0))
 
 const bookPosts = (await getCollection('books'))
   .sort((a, b) => (new Date(a.data.read) > new Date(b.data.read) ? -1 : 1))
