@@ -7,7 +7,6 @@ interface Props {
   imgAlt: string
   album: string
   artist: string
-  score?: number
   transitionName?: string
   anchorClass?: string
   cardClass?: string
@@ -19,10 +18,9 @@ const {
   imgAlt,
   album,
   artist,
-  score,
   transitionName,
-  anchorClass = 'flex flex-col group',
-  cardClass = 'flex h-full flex-col justify-between rounded border border-gray-700 p-2 dark:bg-gray-900 transition-all duration-300 hover:border-gray-500 dark:hover:border-gray-500',
+  anchorClass = 'flex flex-col',
+  cardClass = 'flex h-full flex-col justify-between rounded border border-gray-700 p-2 dark:bg-gray-900',
 } = Astro.props as Props
 ---
 
@@ -35,10 +33,10 @@ const {
           class="absolute inset-0"
           style={{
             backgroundImage: `url(${imgSrc})`,
-            backgroundSize: 'cover',
+            backgroundSize: 'cover', // fill both axes, no distortion
             backgroundPosition: 'center',
             backgroundRepeat: 'no-repeat',
-            transform: 'scale(1.06)',
+            transform: 'scale(1.06)', // hide blur edges
             filter: 'blur(7px) saturate(120%) brightness(1.0)',
           }}
           aria-hidden="true"
@@ -63,27 +61,6 @@ const {
           class="pointer-events-none absolute inset-0 bg-gradient-to-br from-black/10 to-black/0"
         >
         </div>
-
-        <!-- Score overlay - appears on hover -->
-        {
-          score !== undefined && (
-            <div class="absolute inset-0 z-20 flex items-center justify-center bg-black/40 opacity-0 backdrop-blur-sm transition-all duration-300 ease-out group-hover:opacity-100">
-              {/* Score display */}
-              <div class="flex flex-col items-center gap-1">
-                {/* Main score number */}
-                <div class="text-6xl font-light tracking-tighter text-white md:text-7xl">
-                  {score}
-                </div>
-
-                {/* Subtle divider line */}
-                <div class="h-px w-12 bg-white/40" />
-
-                {/* "out of 10" text */}
-                <div class="text-sm font-light tracking-wide text-white/80 md:text-base">/ 10</div>
-              </div>
-            </div>
-          )
-        }
       </div>
     </div>
 
