@@ -5,7 +5,7 @@ release_date: '2018-02-16'
 genres: ['Indie Rock', 'Singer Songwriter']
 cover_art_url: '/assets/music/car-seat-headrest-twin-fantasy.jpg'
 post_date: '2022-01-01'
-score: 9.7
+score: 10
 ---
 
 ## Track Listing
