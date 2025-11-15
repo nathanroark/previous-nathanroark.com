@@ -5,7 +5,7 @@ release_date: '2017-03-24'
 genres: ['Singer Songwriter', 'Indie Folk']
 cover_art_url: '/assets/music/mount-eerie-a-crow-looked-at-me.jpg'
 post_date: '2022-01-01'
-score: 9.4
+score: 9.6
 ---
 
 ## Track Listing
