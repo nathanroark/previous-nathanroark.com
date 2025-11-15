@@ -1,7 +1,7 @@
 ---
 interface Props {
   imgSrc: string
-  opacity?: number // 0–1 (ended up keeping it at 1 because I could see too much of the image otherwise)
+  opacity?: number // 0–1
   blur?: number // px
   animated?: boolean
 }
@@ -10,68 +10,62 @@ const { imgSrc, opacity = 1.0, blur = 62, animated = true } = Astro.props as Pro
 
 <style>
   .abs-root {
-    position: absolute; /* position to the relative parent */
-    inset: 0; /* fill parent */
-    z-index: 0; /* behind in-parent content; parent must manage stacking */
-    pointer-events: none;
-    overflow: hidden; /* keep within the parent */
-  }
-  /* Make the background elements fill and extend beyond the parent (120% in both directions) */
-  .abs-bg,
-  .abs-soften {
     position: absolute;
-    inset: -20% -20%;
+    inset: 0;
+    z-index: 0;
+    pointer-events: none;
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
   }
 
+  /* Use a single blurred background layer */
   .abs-bg {
-    background-image: var(--abs-img); /* image that will be blurred */
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    right: -50%;
+    bottom: -50%;
+    width: 200%;
+    height: 200%;
+    background-image: var(--abs-img);
     background-repeat: no-repeat;
-    background-position: 50% 50%; /* center image */
-    background-size: 240% 240%; /* stretch image to give it more of an effect like we are just using the colors */
-    filter: saturate(1.2) brightness(0.94); /* enhance colors a bit to make it pop */
-    opacity: var(--abs-opacity); /* control opacity */
-
-    will-change:
-      background-position, transform, filter; /* tell borwser these will change for better performance */
-  }
-  .abs-soften {
-    backdrop-filter: blur(var(--abs-blur)); /* blur the background image */
-    -webkit-backdrop-filter: blur(var(--abs-blur)); /* same but for Safari */
+    background-position: center center;
+    background-size: cover;
+    filter: blur(var(--abs-blur)) saturate(1.2) brightness(0.94);
+    opacity: var(--abs-opacity);
+    will-change: transform;
+    transform-origin: center center;
   }
 
-  /* Animation to slowly pan and zoom the background image */
+  /* More noticeable animation with bigger movements */
   @keyframes abs-pan {
     0% {
-      /* start with a bit zoomed in and offset */
-      background-position: 40% 45%;
-      transform: scale(1.02);
+      transform: scale(1.08) translate(0%, 0%);
     }
-    50% {
-      /* pan to the opposite corner and zoom in more */
-      background-position: 60% 55%;
-      transform: scale(1.06);
+    33% {
+      transform: scale(1.12) translate(-2%, 1%);
+    }
+    66% {
+      transform: scale(1.1) translate(2%, -1%);
     }
     100% {
-      /* return to start */
-      background-position: 40% 45%;
-      transform: scale(1.02);
+      transform: scale(1.08) translate(0%, 0%);
     }
   }
+
   .abs-animated .abs-bg {
-    /* apply the abs-pan animation */
-    animation: abs-pan 16s ease-in-out infinite;
+    animation: abs-pan 20s ease-in-out infinite;
   }
 </style>
 
 <div
   class={`abs-root ${animated ? 'abs-animated' : ''}`}
   style={{
-    // apply CSS variables from the Astro props
     '--abs-img': `url(${imgSrc})`,
     '--abs-opacity': String(opacity),
     '--abs-blur': `${blur}px`,
   }}
 >
   <div class="abs-bg" aria-hidden="true"></div>
-  <div class="abs-soften" aria-hidden="true"></div>
 </div>

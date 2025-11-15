@@ -10,7 +10,7 @@ score: 8
 
 ## Thoughts
 
-A great return for this artist, love the reimagining of this album, can tell how much she has grown artistically and in talent.
+A great return for this artist, love the reimagining of this album.
 
 ## Track Listing
 

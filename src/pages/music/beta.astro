@@ -1,6 +1,6 @@
 ---
 import Layout from '@/layouts/layout.astro'
-import AlbumCard from '@/components/album-card.astro'
+import AlbumCard from '@/components/beta-album-card.astro'
 
 import { getCollection } from 'astro:content'
 
@@ -50,6 +50,7 @@ const years = Object.keys(albumsByYear)
                 imgAlt={post.data.album}
                 album={post.data.album}
                 artist={post.data.artist}
+                score={post.data.score}
                 transitionName={`transition-${post.slug}`}
               />
             ))}
