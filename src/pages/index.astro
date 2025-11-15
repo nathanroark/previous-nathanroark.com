@@ -7,8 +7,12 @@ import AlbumCard from '@/components/album-card.astro'
 import { getCollection } from 'astro:content'
 import ArrowRight from '@/components/icons/arrow-right.astro'
 
-const topMusicPosts = (await getCollection('albums'))
-  .sort((a, b) => (b.data.score ?? 0) - (a.data.score ?? 0))
+// const topMusicPosts = (await getCollection('albums'))
+//   .sort((a, b) => (b.data.score ?? 0) - (a.data.score ?? 0))
+//   .slice(0, 10)
+
+const musicPosts = (await getCollection('albums'))
+  .sort((a, b) => (new Date(a.data.release_date) > new Date(b.data.release_date) ? -1 : 1))
   .slice(0, 10)
 
 const bookPosts = (await getCollection('books'))
@@ -56,7 +60,7 @@ const moviePosts = (await getCollection('movies'))
       </UnderlineLink>
       <div class="grid grid-cols-2 gap-4 md:grid-cols-5">
         {
-          topMusicPosts.map((post: any) => (
+          musicPosts.map((post: any) => (
             <AlbumCard
               href={`/music/${post.slug}`}
               imgSrc={post.data.cover_art_url}
