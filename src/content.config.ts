@@ -7,7 +7,6 @@ const BookSchema = z.object({
   published: z.coerce.date(),
   genres: z.array(z.string()),
   cover_image: z.string(),
-  read: z.string(),
 })
 export type BookEntry = z.output<typeof BookSchema>
 
