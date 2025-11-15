@@ -2,7 +2,6 @@
 artist: '明日の叙景 (Asunojokei)'
 album: 'アイランド (Island)'
 release_date: '2022-07-27'
-post_date: '2022-07-27'
 genres: ['Blackgaze', 'Post Hardcore', 'Screamo', 'J-Rock', 'Post Metal']
 cover_art_url: '/assets/music/asunojokei-island.jpg'
 score: 8
