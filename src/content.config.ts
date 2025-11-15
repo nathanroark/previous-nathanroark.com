@@ -20,7 +20,6 @@ const AlbumSchema = z.object({
   artist: z.string(),
   album: z.string(),
   release_date: z.coerce.date(),
-  post_date: z.coerce.date(),
   cover_art_url: z.string(),
   genres: z.array(z.string()),
   score: z.number().min(0).max(10).optional(), // allow 0 to 10 (e.g., 7.5/10)
@@ -55,7 +54,6 @@ const MovieSchema = z.object({
   genre: z.array(z.string()),
   cover_art_url: z.string(),
   release_date: z.coerce.date(),
-  post_date: z.coerce.date(),
   description: z.string().optional(),
 })
 export type MovieEntry = z.output<typeof MovieSchema>
