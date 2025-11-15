@@ -1,7 +1,6 @@
 ---
 import Layout from '@/layouts/layout.astro'
 import AlbumCard from '@/components/beta-album-card.astro'
-
 import { getCollection } from 'astro:content'
 
 // Get all albums sorted by release date (newest first)
@@ -9,41 +8,62 @@ const musicPosts = (await getCollection('albums')).sort((a, b) =>
   new Date(a.data.release_date) > new Date(b.data.release_date) ? -1 : 1,
 )
 
-// Group albums by year
-const albumsByYear = musicPosts.reduce(
+// Group albums by year or decade
+const albumsByPeriod = musicPosts.reduce(
   (acc, post) => {
     const year = new Date(post.data.release_date).getFullYear()
-    if (!acc[year]) {
-      acc[year] = []
+    let period: string
+
+    if (year >= 2020) {
+      // Show individual years from 2010 onwards
+      period = String(year)
+    } else {
+      // Group by decade for older albums
+      const decade = Math.floor(year / 10) * 10
+      period = `${decade}s`
     }
-    acc[year].push(post)
+
+    if (!acc[period]) {
+      acc[period] = []
+    }
+    acc[period].push(post)
     return acc
   },
-  {} as Record<number, typeof musicPosts>,
+  {} as Record<string, typeof musicPosts>,
 )
 
-// Get years in descending order
-const years = Object.keys(albumsByYear)
-  .map(Number)
-  .sort((a, b) => b - a)
+// Sort albums within each period by score (highest first)
+Object.keys(albumsByPeriod).forEach((period) => {
+  albumsByPeriod[period].sort((a, b) => {
+    const scoreA = a.data.score ?? -1
+    const scoreB = b.data.score ?? -1
+    return scoreB - scoreA
+  })
+})
+
+// Get periods in descending order (years first, then decades)
+const periods = Object.keys(albumsByPeriod).sort((a, b) => {
+  // Extract numeric value for comparison
+  const numA = a.endsWith('s') ? parseInt(a) : parseInt(a)
+  const numB = b.endsWith('s') ? parseInt(b) : parseInt(b)
+  return numB - numA
+})
 ---
 
 <Layout title="Favorite Albums" description="My favorite albums.">
   <div class="mx-auto max-w-7xl space-y-12 px-4 py-8">
     {
-      years.map((year) => (
+      periods.map((period) => (
         <section class="space-y-4">
-          {/* Year header with line */}
+          {/* Period header with line */}
           <div class="flex items-center gap-4">
-            <h2 class="text-3xl font-bold tracking-tight md:text-4xl">{year}</h2>
+            <h2 class="text-3xl font-bold tracking-tight md:text-4xl">{period}</h2>
             <div class="h-px flex-1 bg-gradient-to-r from-gray-300 to-transparent dark:from-gray-700" />
           </div>
 
           {/* Album grid */}
-          <!-- <div class="grid grid-cols-2 gap-4 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5"> -->
-
-  <div class="grid grid-cols-2 gap-4 md:grid-cols-3 lg:grid-cols-5">
-            {albumsByYear[year].map((post: any) => (
+          <div class="grid grid-cols-2 gap-4 md:grid-cols-3 lg:grid-cols-5">
+            {albumsByPeriod[period].map((post: any) => (
               <AlbumCard
                 href={`/music/${post.slug}`}
                 imgSrc={post.data.cover_art_url}
