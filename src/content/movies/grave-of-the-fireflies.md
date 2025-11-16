@@ -4,5 +4,5 @@ release_date: 'April 16 1988'
 studio: 'Studio Ghibli'
 genre: ['Drama', 'Historical Fiction', 'War']
 cover_art_url: '/assets/movies/grave-of-the-fireflies.webp'
-post_date: '2024-11-01'
+score: 8
 ---

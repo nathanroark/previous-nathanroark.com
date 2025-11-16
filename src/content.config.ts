@@ -55,6 +55,7 @@ const MovieSchema = z.object({
   cover_art_url: z.string(),
   release_date: z.coerce.date(),
   description: z.string().optional(),
+  score: z.number().min(0).max(10).optional(),
 })
 export type MovieEntry = z.output<typeof MovieSchema>
 

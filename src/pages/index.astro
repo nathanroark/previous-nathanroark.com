@@ -47,9 +47,10 @@ const animePosts = (await getCollection('anime'))
   .slice(0, 10)
 
 const moviePosts = (await getCollection('movies'))
-  .sort((a, b) => (new Date(a.data.release_date) > new Date(b.data.release_date) ? -1 : 1))
+  // .sort((a, b) => (new Date(a.data.release_date) > new Date(b.data.release_date) ? -1 : 1))
+  // .slice(0, 10)
+  .sort((a, b) => (b.data.score ?? 0) - (a.data.score ?? 0))
   .slice(0, 10)
-// .sort((a, b) => (b.data.score ?? 0) - (a.data.score ?? 0))
 ---
 
 <Layout title="Nathan's Blog" description="A blog about music, movies, anime, and books I like.">

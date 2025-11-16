@@ -5,5 +5,5 @@ release_date: '1987-09-11'
 cover_art_url: '/assets/movies/full-metal-jacket.jpg'
 genre: ['Drama', 'War']
 post_date: '2025-10-31'
-score: 10
+score: 9.5
 ---
