@@ -7,3 +7,9 @@ genres: ['Experimental Hip Hop', 'Rage', 'Digicore', 'Cloud Rap']
 cover_art_url: '/assets/music/lucy-bedroque-unmusique.webp'
 score: 8
 ---
+
+Some amazing tracks on here. So really creative and new ideas that I love but it isn't consistant.
+
+Tracks like 2010 Justin Bieber have inspiring and fun production but for every one of those 10/10 songs there is a meh song somewhere else on the album.
+
+Still going to be one of my favorite albums of the year and an album I come back to often for those amazing songs. I'm excited to see future projects from this artist.
