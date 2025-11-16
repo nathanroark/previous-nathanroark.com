@@ -5,7 +5,7 @@ release_date: '2021-07-29'
 genres: ['Breakcore', 'Atmospheric Drum and Bass', 'Electronic']
 cover_art_url: '/assets/music/tokyopill-virtual-death-9-5.jpg'
 post_date: '2022-01-01'
-score: 7.5
+score: 6.5
 ---
 
 ## Thoughts
