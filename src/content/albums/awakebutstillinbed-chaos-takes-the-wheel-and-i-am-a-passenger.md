@@ -5,12 +5,12 @@ release_date: 'Oct 20 23'
 post_date: 'Nov 24 23'
 genres: ['Punk', 'Emo', 'Extremo', 'Indie']
 cover_art_url: '/assets/music/awakebutstillinbed-chaos-takes-the-wheel-and-i-am-a-passenger.jpg'
-score: 8
+score: 9
 ---
 
 ## Thoughts
 
-Shannon Taylor brings the best screamo vocals of the year.
+Shannon Taylor brings the best and most unique screaming vocals
 
 ## Track Listing
 
