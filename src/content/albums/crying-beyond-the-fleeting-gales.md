@@ -5,7 +5,7 @@ release_date: '2016-10-14'
 genres: ['Power Pop', 'Progressive Pop', 'Emo', 'Indie Rock', 'Post-Rock', 'Shoegaze', 'Chiptune']
 cover_art_url: '/assets/music/crying-beyond-the-fleeting-gales.jpg'
 post_date: '2017-01-01'
-score: 8
+score: 7
 ---
 
 ## Track Listing
