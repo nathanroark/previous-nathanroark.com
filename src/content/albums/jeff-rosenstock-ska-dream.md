@@ -5,7 +5,7 @@ release_date: '2021-04-20'
 post_date: '2021-04-20'
 genres: ['Ska', 'Ska Punk', 'New Tone']
 cover_art_url: '/assets/music/jeff-rosenstock-ska-dream.webp'
-score: 9
+score: 8
 ---
 
 ## Thoughts
