@@ -5,7 +5,7 @@ release_date: '2002-09-09'
 post_date: '2023-08-06'
 genres: ['Slowcore', 'Sadcore', 'Indie Rock']
 cover_art_url: '/assets/music/carissas-wierd-songs-about-leaving.webp'
-score: 9.5
+score: 9
 ---
 
 ## Songs About Leaving
