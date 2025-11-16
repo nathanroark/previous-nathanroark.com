@@ -5,7 +5,7 @@ release_date: '2018-08-18'
 genres: ['J-Rock', 'Shoegaze', 'Noise Pop']
 cover_art_url: '/assets/music/seapool-sweet-q-love.jpg'
 post_date: '2023-01-01'
-score: 9
+score: 8
 ---
 
 ## Track listing

@@ -5,7 +5,7 @@ release_date: '2015-11-10'
 genres: ['Midwest Emo', 'Post-Rock', 'Post Hardcore']
 cover_art_url: '/assets/music/karas-walk-home-i-dont-want-to-look-at-the-stars.jpg'
 post_date: '2023-01-01'
-score: 9
+score: 8.5
 ---
 
 ## Track Listing
