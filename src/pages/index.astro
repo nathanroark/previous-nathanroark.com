@@ -57,9 +57,7 @@ const moviePosts = (await getCollection('movies'))
   <div class="mx-auto flex h-screen w-full flex-col items-start space-y-16 pb-64 pt-4">
     <div>
       <h1 class="py-3 text-5xl font-bold">Nathan's Blog</h1>
-      <p class="text-xl">
-        This is a blog for me to post about music, movies, anime, and books I like.
-      </p>
+      <p class="text-xl">A blog for me to post about music, movies, anime, and books.</p>
     </div>
 
     {/* Music */}
@@ -84,6 +82,7 @@ const moviePosts = (await getCollection('movies'))
               imgAlt={post.data.album}
               album={post.data.album}
               artist={post.data.artist}
+              score={post.data.score}
               transitionName={`transition-${post.slug}`}
             />
           ))
