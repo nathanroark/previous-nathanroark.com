@@ -5,7 +5,7 @@ release_date: '2017-05-05'
 genres: ['Midwest Emo', 'Indie Rock']
 cover_art_url: '/assets/music/swordfish-rodia.jpg'
 post_date: '2022-01-01'
-score: 6
+score: 5.5
 ---
 
 ## Thoughts

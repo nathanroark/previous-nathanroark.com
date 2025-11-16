@@ -5,7 +5,7 @@ release_date: '2013-01-08'
 post_date: 'Aug 06 23'
 genres: ['Midwest Emo']
 cover_art_url: '/assets/music/brave-bird-maybe-you-no-one-else-worth-it.webp'
-score: 7
+score: 6.5
 ---
 
 ## Maybe You No One Else Worth It
