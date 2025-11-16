@@ -9,28 +9,31 @@ const musicPosts = (await getCollection('albums')).sort((a, b) =>
 )
 
 // Group albums by year or decade
-const albumsByPeriod = musicPosts.reduce(
-  (acc, post) => {
-    const year = new Date(post.data.release_date).getFullYear()
-    let period: string
+const albumsByPeriod = musicPosts
+  // remove albums less that 5 score
+  .filter((post) => (post.data.score ?? 0) >= 6)
+  .reduce(
+    (acc, post) => {
+      const year = new Date(post.data.release_date).getFullYear()
+      let period: string
 
-    if (year >= 2020) {
-      // Show individual years from 2010 onwards
-      period = String(year)
-    } else {
-      // Group by decade for older albums
-      const decade = Math.floor(year / 10) * 10
-      period = `${decade}s`
-    }
+      if (year >= 2020) {
+        // Show individual years from 2010 onwards
+        period = String(year)
+      } else {
+        // Group by decade for older albums
+        const decade = Math.floor(year / 10) * 10
+        period = `${decade}s`
+      }
 
-    if (!acc[period]) {
-      acc[period] = []
-    }
-    acc[period].push(post)
-    return acc
-  },
-  {} as Record<string, typeof musicPosts>,
-)
+      if (!acc[period]) {
+        acc[period] = []
+      }
+      acc[period].push(post)
+      return acc
+    },
+    {} as Record<string, typeof musicPosts>,
+  )
 
 // Sort albums within each period by score (highest first)
 Object.keys(albumsByPeriod).forEach((period) => {
