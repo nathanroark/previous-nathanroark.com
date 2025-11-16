@@ -5,7 +5,7 @@ release_date: '2011-07-05'
 post_date: '2022-01-01'
 genres: ['Emo', 'Post Hardcore']
 cover_art_url: '/assets/music/basement-i-wish-i-could-stay-here.jpg'
-score: 6.5
+score: 6
 ---
 
 ## I Wish I Could Stay Here

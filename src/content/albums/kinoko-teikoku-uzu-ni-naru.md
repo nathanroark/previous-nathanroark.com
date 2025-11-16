@@ -5,7 +5,7 @@ release_date: '2013-02-06'
 genres: ['Indie Rock', 'J-Rock', 'Dream Pop', Shoegaze]
 cover_art_url: '/assets/music/kinoko-teikoku-uzu-ni-naru.jpg'
 post_date: '2022-02-01'
-score: 8
+score: 7.5
 ---
 
 ## Track Listing
