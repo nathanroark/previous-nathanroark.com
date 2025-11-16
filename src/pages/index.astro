@@ -7,10 +7,28 @@ import AlbumCard from '@/components/album-card.astro'
 import { getCollection } from 'astro:content'
 import ArrowRight from '@/components/icons/arrow-right.astro'
 
-const musicPosts = (await getCollection('albums'))
-  .sort((a, b) => (new Date(a.data.release_date) > new Date(b.data.release_date) ? -1 : 1))
-  .slice(0, 10)
-  .sort((a, b) => (b.data.score ?? 0) - (a.data.score ?? 0))
+// Get all albums sorted by release date (newest first)
+const allAlbums = (await getCollection('albums')).sort((a, b) =>
+  new Date(a.data.release_date) > new Date(b.data.release_date) ? -1 : 1,
+)
+
+// Get current year
+const currentYear = new Date().getFullYear()
+
+// Get albums from this year
+const thisYearAlbums = allAlbums.filter(
+  (album) => new Date(album.data.release_date).getFullYear() === currentYear,
+)
+
+// Decide which set to use
+let musicPosts
+if (thisYearAlbums.length >= 10) {
+  // If we have 10 or more albums this year, use those
+  musicPosts = thisYearAlbums.sort((a, b) => (b.data.score ?? 0) - (a.data.score ?? 0)).slice(0, 10)
+} else {
+  // Otherwise, take the 10 most recent albums from all time
+  musicPosts = allAlbums.slice(0, 10).sort((a, b) => (b.data.score ?? 0) - (a.data.score ?? 0))
+}
 
 const bookPosts = (await getCollection('books'))
   .sort((a, b) => (new Date(a.data.read) > new Date(b.data.read) ? -1 : 1))
