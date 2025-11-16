@@ -11,7 +11,7 @@ const musicPosts = (await getCollection('albums')).sort((a, b) =>
 // Group albums by year or decade
 const albumsByPeriod = musicPosts
   // remove albums less that 5 score
-  .filter((post) => (post.data.score ?? 0) > 5)
+  // .filter((post) => (post.data.score ?? 0) > 5)
   .reduce(
     (acc, post) => {
       const year = new Date(post.data.release_date).getFullYear()
