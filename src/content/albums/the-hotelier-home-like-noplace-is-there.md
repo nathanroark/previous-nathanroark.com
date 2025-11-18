@@ -5,7 +5,7 @@ release_date: '2014-02-18'
 genres: ['Emo', 'Post Hardcore', 'Midwest Emo', 'Pop Punk']
 cover_art_url: '/assets/music/the-hotelier-home-like-noplace-is-there.jpg'
 post_date: '2022-01-01'
-score: 8
+score: 7.5
 ---
 
 ## Track Listing
