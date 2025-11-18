@@ -4,13 +4,14 @@ album: 'Rodia'
 release_date: '2017-05-05'
 genres: ['Midwest Emo', 'Indie Rock']
 cover_art_url: '/assets/music/swordfish-rodia.jpg'
-post_date: '2022-01-01'
 score: 5.5
 ---
 
 ## Thoughts
 
-Swordfish's debut album and a fantastic one at that. Social Drinker can give chills with the scenes and emotions that it is describing on top of being one of the best performed songs I've heard.
+Social Drinker can give chills with the scenes and emotions that it is describing on top of being a fantastically performed song.
+
+No other song has really jumped back at me yet.
 
 ## Track Listing
 
