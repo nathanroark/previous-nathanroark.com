@@ -51,10 +51,27 @@ const periods = Object.keys(albumsByPeriod).sort((a, b) => {
   const numB = b.endsWith('s') ? parseInt(b) : parseInt(b)
   return numB - numA
 })
+
+// const showScores = Astro.url.searchParams.get('scores') === 'true'
+const showScores = true
 ---
 
 <Layout title="Favorite Albums" description="My favorite albums.">
   <div class="space-y-12">
+    <!-- Page Settings -->
+    <!--   <div> -->
+    <!--     <button -->
+    <!--       class="mt-2 rounded bg-gray-200 px-3 py-1 text-sm dark:bg-gray-800" -->
+    <!--       onclick={`(() => { -->
+    <!--   const params = new URLSearchParams(window.location.search) -->
+    <!--   ${showScores ? "params.delete('scores')" : "params.set('scores', 'true')"} -->
+    <!--   const newQuery = params.toString() -->
+    <!--   location.search = newQuery ? '?' + newQuery : '' -->
+    <!-- })()`} -->
+    <!--     > -->
+    <!--       {showScores ? 'Hide' : 'Show'} Scores -->
+    <!--     </button> -->
+    <!--   </div> -->
     {
       periods.map((period) => (
         <section class="space-y-4">
@@ -73,7 +90,7 @@ const periods = Object.keys(albumsByPeriod).sort((a, b) => {
                 imgAlt={post.data.album}
                 album={post.data.album}
                 artist={post.data.artist}
-                score={post.data.score}
+                score={showScores ? post.data.score : undefined}
                 transitionName={`transition-${post.slug}`}
               />
             ))}

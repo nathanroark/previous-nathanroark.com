@@ -27,7 +27,8 @@ const {
   subtitle,
   transitionName,
   class: anchorClass = 'flex flex-col',
-  cardClass = 'flex h-full flex-col justify-between rounded border border-gray-700 p-2 dark:bg-gray-900 transition-all duration-300 hover:border-gray-500 dark:hover:border-gray-500',
+  // cardClass = 'flex h-full flex-col justify-between rounded border border-gray-700 p-2 dark:bg-gray-900 transition-all duration-300 hover:border-gray-500 dark:hover:border-gray-500',
+  cardClass = 'flex h-full flex-col justify-between rounded transition-all duration-300',
   ariaLabel,
 } = Astro.props as Props
 ---
@@ -35,11 +36,11 @@ const {
 <a href={href} class={anchorClass} aria-label={ariaLabel ?? title}>
   <div class={cardClass}>
     <div transition:name={transitionName} class="m-auto">
-      <AstroImage src={imgSrc} alt={imgAlt} />
+      <AstroImage src={imgSrc} alt={imgAlt} width={200} height={200} />
     </div>
     <div>
-      <p class="truncate pt-4 font-semibold">{title}</p>
-      {subtitle && <p class="pt-1">{subtitle}</p>}
+      <p class="truncate pt-2 text-sm">{title}</p>
+      {subtitle && <p class="truncate text-xs font-light text-white/60">{subtitle}</p>}
     </div>
   </div>
 </a>

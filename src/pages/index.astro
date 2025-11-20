@@ -65,7 +65,6 @@ const moviePosts = (await getCollection('movies'))
       <UnderlineLink
         href="music/"
         class="text-4xl italic"
-        gradient="sunset"
         underlineHeightClass="h-[3px]"
         duration={350}
         aria-label="Music Posts"
@@ -73,7 +72,7 @@ const moviePosts = (await getCollection('movies'))
         Music Posts
         <ArrowRight slot="icon" className="ml-1" size={40} />
       </UnderlineLink>
-      <div class="grid grid-cols-2 gap-3 md:grid-cols-5">
+      <div class="grid grid-cols-2 gap-4 md:grid-cols-5">
         {
           musicPosts.map((post: any) => (
             <AlbumCard
@@ -82,27 +81,11 @@ const moviePosts = (await getCollection('movies'))
               imgAlt={post.data.album}
               album={post.data.album}
               artist={post.data.artist}
-              score={post.data.score}
               transitionName={`transition-${post.slug}`}
             />
           ))
         }
       </div>
-      <!-- <div class="grid grid-cols-2 gap-4 md:grid-cols-5"> -->
-      <!--   { -->
-      <!--     topMusicPosts.map((post: any) => ( -->
-      <!--       <Card -->
-      <!--         href={`/music/${post.slug}`} -->
-      <!--         imgSrc={post.data.cover_art_url} -->
-      <!--         imgAlt={post.data.album} -->
-      <!--         title={post.data.album} -->
-      <!--         subtitle={post.data.artist} -->
-      <!--         transitionName={`record-${post.slug}`} -->
-      <!--         ariaLabel={`${post.data.album} by ${post.data.artist}`} -->
-      <!--       /> -->
-      <!--     )) -->
-      <!--   } -->
-      <!-- </div> -->
     </div>
 
     {/* Movies */}
@@ -110,7 +93,6 @@ const moviePosts = (await getCollection('movies'))
       <UnderlineLink
         href="movies/"
         class="text-4xl italic"
-        gradient="sunset"
         underlineHeightClass="h-[3px]"
         duration={350}
         aria-label="Movie Posts"
@@ -119,7 +101,7 @@ const moviePosts = (await getCollection('movies'))
         <ArrowRight slot="icon" className="ml-1" size={40} />
       </UnderlineLink>
 
-      <div class="grid grid-cols-2 gap-3 md:grid-cols-5">
+      <div class="grid grid-cols-2 gap-4 md:grid-cols-5">
         {
           moviePosts.map((post: any) => (
             <Card
@@ -141,7 +123,6 @@ const moviePosts = (await getCollection('movies'))
       <UnderlineLink
         href="anime/"
         class="text-4xl italic"
-        gradient="sunset"
         underlineHeightClass="h-[3px]"
         duration={350}
         aria-label="Anime Posts"
@@ -150,7 +131,7 @@ const moviePosts = (await getCollection('movies'))
         <ArrowRight slot="icon" className="ml-1" size={40} />
       </UnderlineLink>
 
-      <div class="grid grid-cols-2 gap-3 md:grid-cols-5">
+      <div class="grid grid-cols-2 gap-4 md:grid-cols-5">
         {
           animePosts.map((post: any) => (
             <Card
@@ -181,7 +162,7 @@ const moviePosts = (await getCollection('movies'))
         <ArrowRight slot="icon" className="ml-1" size={40} />
       </UnderlineLink>
 
-      <div class="grid grid-cols-2 gap-3 md:grid-cols-5">
+      <div class="grid grid-cols-2 gap-4 md:grid-cols-5">
         {
           bookPosts.map((post: any) => (
             <Card
