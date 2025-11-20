@@ -20,7 +20,8 @@ const {
   score,
   transitionName,
   anchorClass = 'flex flex-col group',
-  cardClass = 'flex h-full flex-col justify-between rounded border border-gray-700 p-2 dark:bg-gray-900 transition-all duration-300 hover:border-gray-500 dark:hover:border-gray-500',
+  // cardClass = 'flex h-full flex-col justify-between rounded border border-gray-700 p-2 dark:bg-gray-900 transition-all duration-300 hover:border-gray-500 dark:hover:border-gray-500',
+  cardClass = 'flex h-full flex-col justify-between rounded  transition-all duration-300 ',
 } = Astro.props as Props
 ---
 
@@ -79,7 +80,7 @@ const {
               {/* Score display */}
               <div class="flex flex-col items-center gap-1">
                 {/* Main score number */}
-                <div class="text-6xl font-light tracking-tighter text-white md:text-7xl">
+                <div class="text-5xl font-light tracking-tighter text-white md:text-6xl">
                   {score}
                 </div>
 
@@ -96,8 +97,8 @@ const {
     </div>
 
     <div>
-      <p class="truncate pt-4 font-semibold">{album}</p>
-      <p class="truncate pt-1">{artist}</p>
+      <p class="truncate pt-2 text-sm">{album}</p>
+      <p class="truncate text-xs font-light text-white/60">{artist}</p>
     </div>
   </div>
 </a>
