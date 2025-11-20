@@ -54,9 +54,9 @@ const moviePosts = (await getCollection('movies'))
 ---
 
 <Layout title="Nathan's Blog" description="A blog about music, movies, anime, and books I like.">
-  <div class="mx-auto flex h-screen w-full flex-col items-start space-y-16 pb-64 pt-4">
+  <div class="mx-auto flex w-full flex-col space-y-16 pt-4">
     <div>
-      <h1 class="py-3 text-5xl font-bold">Nathan's Blog</h1>
+      <h1 class="text-5xl font-bold">Nathan's Blog</h1>
       <p class="text-xl">A blog for me to post about music, movies, anime, and books.</p>
     </div>
 
@@ -72,7 +72,7 @@ const moviePosts = (await getCollection('movies'))
         Music Posts
         <ArrowRight slot="icon" className="ml-1" size={40} />
       </UnderlineLink>
-      <div class="grid grid-cols-2 gap-4 md:grid-cols-5">
+      <div class="grid grid-cols-2 gap-3 md:grid-cols-5 md:gap-4">
         {
           musicPosts.map((post: any) => (
             <AlbumCard
@@ -101,7 +101,7 @@ const moviePosts = (await getCollection('movies'))
         <ArrowRight slot="icon" className="ml-1" size={40} />
       </UnderlineLink>
 
-      <div class="grid grid-cols-2 gap-4 md:grid-cols-5">
+      <div class="grid grid-cols-2 gap-3 md:grid-cols-5 md:gap-4">
         {
           moviePosts.map((post: any) => (
             <Card
@@ -131,7 +131,7 @@ const moviePosts = (await getCollection('movies'))
         <ArrowRight slot="icon" className="ml-1" size={40} />
       </UnderlineLink>
 
-      <div class="grid grid-cols-2 gap-4 md:grid-cols-5">
+      <div class="grid grid-cols-2 gap-3 md:grid-cols-5 md:gap-4">
         {
           animePosts.map((post: any) => (
             <Card
@@ -162,7 +162,7 @@ const moviePosts = (await getCollection('movies'))
         <ArrowRight slot="icon" className="ml-1" size={40} />
       </UnderlineLink>
 
-      <div class="grid grid-cols-2 gap-4 md:grid-cols-5">
+      <div class="grid grid-cols-2 gap-3 md:grid-cols-5 md:gap-4">
         {
           bookPosts.map((post: any) => (
             <Card
