@@ -15,7 +15,7 @@ links:
 
 #### Falling
 
-- Older sounding EDM song that pulls of the style well.
+- Older sounding EDM song that pulls off the style well.
 
 #### Control
 
@@ -27,4 +27,4 @@ links:
 
 #### Ralph Lauren
 
-- Psychedelic pop edm track. Fun, plays with that sound well.
+- Psychedelic pop edm track. Fun, plays with that sound in an interesting and modern way.
