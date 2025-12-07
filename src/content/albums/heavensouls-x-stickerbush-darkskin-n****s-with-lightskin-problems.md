@@ -21,7 +21,7 @@ links:
 
 #### i am not your savior (feat. Kelly Garlick)
 
-- Loud, distored, beautiful sythns toward then end that are very pretty.
+- Loud, distored, beautiful synths toward then end that are very pretty.
 
 #### bitch gimme my kicks back
 
