@@ -5,7 +5,7 @@ release_date: '2025-05-16'
 post_date: '2025-05-16'
 genres: ['Experimental Hip Hop', 'Rage', 'Digicore', 'Cloud Rap']
 cover_art_url: '/assets/music/lucy-bedroque-unmusique.webp'
-score: 7
+score: 7.5
 ---
 
 Some amazing tracks on here. So really creative and new ideas that I love but it isn't consistant.
