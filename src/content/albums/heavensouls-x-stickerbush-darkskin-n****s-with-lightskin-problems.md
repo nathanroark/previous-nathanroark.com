@@ -15,6 +15,10 @@ links:
 
 ## Highlights
 
-#### fuck a stimulus i need my shit in blood
+#### southern style lemon peppers
 
-- Track has a lot of great sounds on it, 8 minutes of them all kinda scattered but it's interesting.
+- Track has a lot of great sounds on it, 8 minutes of them all kinda scattered around but it's interesting.
+
+#### i am not your savior (feat. Kelly Garlick)
+
+- Loud, distored, beautiful sythns toward then end that are very pretty.
