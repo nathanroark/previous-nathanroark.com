@@ -1,8 +1,8 @@
 ---
 artist: 'Heavensouls x Stickerbush'
 album: 'Darkskin N****s With Lightskin Problems '
-release_date: '2025-04-04'
-genres: ['Digicore', 'Experimental Hip Hop', 'Electronic Dance Music']
+release_date: '2025-03-26'
+genres: ['Experimental Hip Hop', 'Glitch Hop']
 cover_art_url: '/assets/music/heavensouls-x-stickerbush-darkskin-n****s-with-lightskin-problems.jpg'
 score: 6
 links:
