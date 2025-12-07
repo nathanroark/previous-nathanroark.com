@@ -15,7 +15,7 @@ const { title, description, ogImage } = Astro.props
   <head>
     <BaseHead title={title} description={description} ogImage={ogImage} />
   </head>
-  <body class="no-scrollbar">
+  <body class="no-scrollbar min-h-screen">
     <Header />
     <main class="mx-auto w-full">
       <slot />
