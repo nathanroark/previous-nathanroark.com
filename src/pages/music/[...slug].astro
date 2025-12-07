@@ -1,5 +1,6 @@
 ---
 import { getCollection, getEntry } from 'astro:content'
+import StreamingLinks from '@/components/streaming-links.astro'
 import Layout from '@/layouts/content-layout.astro'
 import { Image } from 'astro:assets'
 import BackdropSection from '@/components/backdrop-section.astro'
@@ -55,6 +56,15 @@ const release = new Date(post.data.release_date)
   <div
     class="md:prose-md prose mx-auto px-6 py-8 dark:prose-invert md:prose-lg xl:prose-xl lg:px-0"
   >
+    {
+      post.data.links && (
+        <div class="mt-4">
+          <StreamingLinks links={post.data.links} />
+        </div>
+      )
+    }
+    <hr />
+
     <Content />
   </div>
 </Layout>

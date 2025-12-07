@@ -23,6 +23,7 @@ const AlbumSchema = z.object({
   cover_art_url: z.string(),
   genres: z.array(z.string()),
   score: z.number().min(0).max(10).optional(), // allow 0 to 10 (e.g., 7.5/10)
+  links: z.record(z.string(), z.string()).optional(), // e.g., { 'spotify': 'https://...', 'apple-music': 'https://...' }
 })
 export type AlbumEntry = z.output<typeof AlbumSchema>
 
