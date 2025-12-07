@@ -18,7 +18,7 @@ Still going to be one of my favorite albums of the year and an album I come back
 
 #### 2010 Justin Bieber
 
-- So loud, so much noise, so much happening, love ever second of it. Top song of the year.
+- So loud, so much noise, so much happening, love every second of it. Top song of the year.
 
 #### Oujia
 
