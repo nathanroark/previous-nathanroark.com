@@ -12,3 +12,9 @@ links:
   youtube: 'https://music.youtube.com/playlist?list=OLAK5uy_lt9S14bAOh8nBL8X3-Ktd-raX75LunMnI&si=niZlurjZVIHw0Fp4'
   tidal: 'https://tidal.com/album/426443389'
 ---
+
+## Highlights
+
+#### fuck a stimulus i need my shit in blood
+
+- Track has a lot of great sounds on it, 8 minutes of them all kinda scattered but it's interesting.
