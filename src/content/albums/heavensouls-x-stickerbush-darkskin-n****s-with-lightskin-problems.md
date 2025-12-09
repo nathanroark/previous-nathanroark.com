@@ -4,7 +4,7 @@ album: 'Darkskin N****s With Lightskin Problems'
 release_date: '2025-03-26'
 genres: ['Experimental Hip Hop', 'Glitch Hop']
 cover_art_url: '/assets/music/heavensouls-x-stickerbush-darkskin-n****s-with-lightskin-problems.jpg'
-score: 6.5
+score: 7
 links:
   bandcamp: 'https://officialauthks.bandcamp.com/album/darkskin-niggas-with-lightskin-problems'
   apple-music: 'https://geo.music.apple.com/us/album/darkskin-n-s-with-lightskin-problems/1804715683'
