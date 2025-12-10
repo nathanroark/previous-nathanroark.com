@@ -15,7 +15,7 @@ genres:
   ]
 cover_art_url: '/assets/music/parannoul-after-the-magic.jpg'
 post_date: '2022-01-01'
-score: 8
+score: 8.5
 ---
 
 ## Track Listing
