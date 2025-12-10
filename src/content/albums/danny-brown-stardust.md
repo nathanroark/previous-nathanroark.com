@@ -2,10 +2,9 @@
 artist: 'Danny Brown'
 album: 'Stardust'
 release_date: '2025-11-07'
-post_date: '2025-11-07'
 genres: ['Experimental Hip Hop', 'Electronic Dance Music', 'Pop Rap']
 cover_art_url: '/assets/music/danny-brown-stardust.webp'
-score: 7.5
+score: 7
 ---
 
 ## Thoughts
