@@ -4,8 +4,7 @@ album: 'Deathconsciousness'
 release_date: '2008-01-24'
 genres: ['Post-Punk', 'Shoegaze', 'Drone', 'Post-Rock', 'Post-Industrial', 'Gothic Rock']
 cover_art_url: '/assets/music/have-a-nice-life-deathconsciousness.jpg'
-post_date: '2022-01-01'
-score: 9
+score: 9.5
 ---
 
 ## Thoughts
