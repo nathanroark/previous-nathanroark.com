@@ -4,7 +4,7 @@ album: 'Revengeseekerz'
 release_date: '2025-04-04'
 genres: ['Digicore', 'Experimental Hip Hop', 'Electronic Dance Music']
 cover_art_url: '/assets/music/jane-remover-revengeseekerz.webp'
-score: 8.5
+score: 8
 links:
   bandcamp: 'https://janeremover.bandcamp.com/album/revengeseekerz'
   apple-music: 'https://music.apple.com/us/album/revengeseekerz/1800020675'
