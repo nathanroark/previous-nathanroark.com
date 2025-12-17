@@ -1,7 +1,11 @@
-# Astro Starter Kit: Minimal
+# Nathan Roark Media Blog
 
 ```sh
-npm create astro@latest -- --template minimal
+yarn install
+```
+
+```sh
+yarn start
 ```
 
 [![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/withastro/astro/tree/latest/examples/minimal)
