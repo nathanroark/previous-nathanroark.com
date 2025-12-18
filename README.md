@@ -1,10 +1,12 @@
 # Nathan Roark Media Blog
 
 ```sh
-yarn install
+# install dependencies
+yarn
 ```
 
 ```sh
+# start dev server
 yarn start
 ```
 
