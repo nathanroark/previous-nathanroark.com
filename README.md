@@ -1,4 +1,6 @@
-# Nathan Roark Media Blog
+# Nathan Roark's Previous Media Blog
+
+Astro and Tailwind were out of date and it was easier to rebuild
 
 ```sh
 # install dependencies
